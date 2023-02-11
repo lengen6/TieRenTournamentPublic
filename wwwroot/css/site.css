@@ -1,0 +1,83 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.outline {
+    outline: 1px solid black;
+}
+
+#Red{
+    background-color: red;
+    color: white;
+}
+
+#Blue {
+    background-color: blue;
+    color: white;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+    button:hover {
+        color: blue;
+        outline: grey 5px auto;
+    }
+h3 form input {
+    all: unset;
+    cursor: pointer;
+    font-weight: bold;
+    font-style: italic;
+}
+    input:hover {
+        color: blue;
+        outline: grey 5px auto;
+    }
+
+.sound {
+    position: absolute;
+    top: -100000em;
+}
+
+input[disabled]{
+    color: lightgray;
+}
+button[disabled] {
+    color: lightgray;
+}
+#big-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#change-style {
+    background: none;
+    border: none;
+    color: #1a0dab;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.points {
+    font-size: 85%;
+}
+
+.decision {
+    font-size: 85%;
+}

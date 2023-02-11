@@ -1,0 +1,148 @@
+﻿@page
+@model TieRenTournament.Pages.Events.HistoryModel
+@{
+
+}
+<h3>Filter Results by:</h3>
+<br />
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Red/Blue Name
+                        </th>
+                        <th>
+                            Winner Name
+                        </th>
+                        <th>
+                            Points Scored
+                        </th>
+                        <th>
+                            Victory Methhod
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <form>
+                                <p>First Name: <input asp-for="CompetitorFirstNameSearch" type="text" /></p>
+                                <p>Last Name: <input asp-for="CompetitorLastNameSearch" type="text" /></p>
+                                <input type="submit" value="Apply Filter" />
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <p>First Name: <input asp-for="WinnerFirstNameSearch" type="text" /></p>
+                                <p>Last Name: <input asp-for="WinnerLastNameSearch" type="text" /></p>
+                                <input type="submit" value="Apply Filter" />
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <p>Equal or Greater than: <input asp-for="PointsSearch" type="text" /></p>
+                                <p>(Either Competitor)</p>
+                                <input type="submit" value="Apply Filter" />
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                Victory By:
+                                <select asp-for="VictoryMethodSearch" />
+                                <option value=""></option>
+                                <option value="Submission">Submission</option>
+                                <option value="Points">Points</option>
+                                <option value="Decision">Decision</option>
+                                <option value="Opponent Disqualification">DQ</option>
+
+                                <span></span>
+                                <input type="submit" value="Apply Filter" />
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].RoundNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].MatchNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].CompeitorRed)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].CompeitorBlue)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].CompetitorRedScore)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].CompetitorBlueScore)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].Winner)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].VictoryMethod)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].StartingLength)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].MatchEnd)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches[0].Duration)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Matches)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RoundNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MatchNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompeitorRed.FirstName) @Html.DisplayFor(modelItem => item.CompeitorRed.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompeitorBlue.FirstName) @Html.DisplayFor(modelItem => item.CompeitorBlue.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompetitorRedScore)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompetitorBlueScore)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Winner.FirstName) @Html.DisplayFor(modelItem => item.Winner.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VictoryMethod)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartingLength)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MatchEnd)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Duration)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+<a asp-page="./Results">Back to Player Results</a>

@@ -1,0 +1,78 @@
+﻿@page
+@model TieRenTournament.Pages.Events.ResultsModel
+@{
+}
+<br />
+<h1 class="text-center">Competitor Results</h1>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Place
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Wins
+            </th>
+            <th>
+                Losses
+            </th>
+            <th>
+                Byes
+            </th>
+            <th>
+                Bracket
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var competitor in Model.Results)
+        {
+            <tr>
+                <td>
+                    @competitor.Place
+                </td>
+                <td>
+                    @competitor.FirstName
+                </td>
+                <td>
+                    @competitor.LastName
+                </td>
+                <td>
+                    @competitor.Wins
+                </td>
+                <td>
+                    @competitor.Losses
+                </td>
+                <td>
+                    @competitor.Byes
+                </td>
+                <td>
+                    @competitor.Bracket
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="container outline">
+    <div class="row outline">
+        <div class="col outline">
+            <form method="post">
+                <input type="submit" value="Reset Competitors for another event" asp-page-handler="Results" id="change-style" />
+            </form>
+        </div>
+        <div class="col outline">
+            <a asp-page="/Events/History">View Results by Match</a>
+        </div>
+        <div class="col outline">
+            <a asp-page="/Competitors/Index">Back to Setup (Keep Data)</a>
+        </div>
+    </div>
+</div>
