@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TieRenTournament.Models;
-using TieRenTournament.Utils;
 using Newtonsoft.Json;
 using TieRenTournament.Data;
 using static System.Net.Mime.MediaTypeNames;
